@@ -2,10 +2,11 @@
 
 public class Projektor : Sprzet
 {
-    public Projektor(string nazwa)
+    public string Rozdzielczosc { get; set; }
+    public int Lumens { get; set; }
+    public Projektor(string nazwa, string rozdzielczosc, int lumens) :  base(nazwa)
     {
-        Id = Count++;
-        Dostepnosc = true;
-        Nazwa = nazwa;
+        Rozdzielczosc = rozdzielczosc;
+        Lumens = lumens;
     }
 }

@@ -2,10 +2,12 @@
 
 public class Kamera : Sprzet
 {
-    public Kamera(string nazwa)
+    public int MPX { get; set; }
+    public bool HasOpticalZoom { get; set; }
+    
+    public Kamera(string nazwa, int mpx, bool hasOpticalZoom) : base(nazwa)
     {
-        Id = Count++;
-        Dostepnosc = true;
-        Nazwa = nazwa;
+        MPX = mpx;
+        HasOpticalZoom = hasOpticalZoom;
     }
 }
