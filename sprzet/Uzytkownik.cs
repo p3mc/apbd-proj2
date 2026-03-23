@@ -6,7 +6,7 @@ public enum UserType
     Employee
 }
 
-public abstract class Uzytkownik
+public class Uzytkownik
 {
     public static int Count = 1;
     UserType userType;
