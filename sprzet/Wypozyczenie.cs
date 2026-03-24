@@ -16,6 +16,12 @@ public class Wypozyczenie
         {
             throw new Exception("Nie mozna wypozyczyc danemu uzytkownikowi.");
         }
+
+        if (sprzet.Dostepny == false)
+        {
+            throw new Exception("Sprzet niedostepny.");
+        }
+        
         this.uzytkownik = uzytkownik;
         this.sprzet = sprzet;
         sprzet.Dostepny = false;
