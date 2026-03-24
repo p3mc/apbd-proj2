@@ -39,3 +39,5 @@ Console.WriteLine();
 s26646.ListaExpiredWypozyczen();
 
 // 10. raport stanu wypozyczalni
+Console.WriteLine();
+Sprzet.Raport();

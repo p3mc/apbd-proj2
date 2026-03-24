@@ -2,6 +2,7 @@
 
 public class Wypozyczenie
 {
+    public static int Count = 0;
     Uzytkownik uzytkownik;
     Sprzet sprzet;
     private bool ZwrotNaCzas { get; set; }
@@ -22,6 +23,7 @@ public class Wypozyczenie
         this.period = period;
         ZwrotNaCzas = true;
         uzytkownik.NoweWypozyczenie(this);
+        Count++;
             
     }
 
@@ -32,6 +34,7 @@ public class Wypozyczenie
         uzytkownik.GetWypozyczenia().Remove(this);
         ZwrotNaCzas = CzyNaCzas;
         if (!CzyNaCzas) uzytkownik.DodajKare(5.0);
+        Count--;
     }
 
     override public string ToString()

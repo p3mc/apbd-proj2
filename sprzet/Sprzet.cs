@@ -38,5 +38,24 @@ public abstract class Sprzet
                 if (s.Dostepny) Console.WriteLine(s.Nazwa + " " + s.Dostepny);
             }
     }
-    
+
+    public static void Raport()
+    {
+        Console.WriteLine("Stan przedmiotow:");
+        int total = 0;
+        foreach (Sprzet s in wyposazenie)
+        {
+            if (s.Dostepny)
+            {
+                total++;
+                Console.WriteLine(s.Nazwa + ", stan: Dostepny");
+            }
+            else
+            {
+                Console.WriteLine(s.Nazwa + ", stan: Niedostepny");
+            }
+        }
+        Console.WriteLine("W sumie: " + wyposazenie.Count + ", dostepnych: " + total);
+        Console.WriteLine("Uzytkownikow: " + (Uzytkownik.Count-1) + " | " + "Aktywne wypozyczenia: " + Wypozyczenie.Count);
+    }
 }
