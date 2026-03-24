@@ -17,11 +17,21 @@ public class Wypozyczenie
         }
         this.uzytkownik = uzytkownik;
         this.sprzet = sprzet;
+        sprzet.Dostepny = false;
         this.odData = odData;
         this.period = period;
-        ZwrotNaCzas = false;
+        ZwrotNaCzas = true;
         uzytkownik.NoweWypozyczenie(this);
             
+    }
+
+    public void Zwroc(bool CzyNaCzas)
+    {
+        sprzet.Dostepny = true;
+        uzytkownik.ExpiredWypozyczenie(this);
+        uzytkownik.GetWypozyczenia().Remove(this);
+        ZwrotNaCzas = CzyNaCzas;
+        if (!CzyNaCzas) uzytkownik.DodajKare(5.0);
     }
 
     override public string ToString()

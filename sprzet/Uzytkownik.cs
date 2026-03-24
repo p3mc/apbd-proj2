@@ -12,6 +12,8 @@ public class Uzytkownik
     UserType userType;
     private string name, surname;
     List<Wypozyczenie> wypozyczenia = new List<Wypozyczenie>();
+    private List<Wypozyczenie> expiredWypozyczenia = new List<Wypozyczenie>();
+    public double Kary { get; set; } = 0;
     
     public int Id { get; set; }
     
@@ -38,10 +40,25 @@ public class Uzytkownik
         wypozyczenia.Add(w);
     }
 
+    public void ExpiredWypozyczenie(Wypozyczenie w)
+    {
+        expiredWypozyczenia.Add(w);
+    }
+
+    public void ListaExpiredWypozyczen()
+    {
+        Console.WriteLine();
+        Console.WriteLine($"Wygasle wypozyczenia uzytkownika {Id}:");
+        foreach (var w in expiredWypozyczenia)
+        {
+            Console.WriteLine(w);
+        }
+    }
+
     public void ListaWypozyczen()
     {
         Console.WriteLine();
-        Console.WriteLine($"Wypozyczenia uzytkownika : {Id}:");
+        Console.WriteLine($"Wypozyczenia uzytkownika {Id}:");
         foreach (var w in wypozyczenia)
             {
             Console.WriteLine(w);
@@ -51,5 +68,15 @@ public class Uzytkownik
     override public string ToString()
     {
         return name + " " + surname + "(" + Id + ")";
+    }
+
+    public void DodajKare(double kara)
+    {
+        Kary += kara;
+    }
+
+    public void UsunKare()
+    {
+        Kary = 0;
     }
 }
