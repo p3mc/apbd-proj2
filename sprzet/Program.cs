@@ -3,10 +3,16 @@
 
 using sprzet;
 
-// tworzenie nowego uzytkownika
-Uzytkownik s26646 = new Uzytkownik(UserType.Student, "Karina", "Szczepanek");
+// 1. tworzenie nowego uzytkownika
+Uzytkownik s26646 = new Uzytkownik(UserType.Student, "Krzysztof", "Bobr");
 
-// tworzenie nowego sprzetu
-Sprzet projektor1 = new Projektor("Samsung", "przyklad", 0);
+// 2. tworzenie nowego sprzetu
+Sprzet projektor1 = new Projektor("Supernowyprojektor", "przyklad", 0);
+Sprzet laptop1 = new Laptop("AIO", "dcjdabcjhbcjac", "axbshaxjav");
+laptop1.Dostepny = false;
 
-// 
+// 3. lista sprzetu + status
+Sprzet.Pokaz();
+
+// 4. wyswietlenie dostepnego sprzetu
+Sprzet.PokazDostepne();
