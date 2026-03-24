@@ -16,3 +16,7 @@ Sprzet.Pokaz();
 
 // 4. wyswietlenie dostepnego sprzetu
 Sprzet.PokazDostepne();
+
+// 5. wypozyczenie sprzetu uzytkownikowi
+Wypozyczenie w1 = new Wypozyczenie(s26646, laptop1, new DateTime(), 5);
+Console.WriteLine(w1);
